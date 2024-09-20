@@ -6,6 +6,10 @@ import {
 } from 'react'
 import reactLogo from '@/assets/react.svg'
 import {
+  HeartHandshake, 
+  BookOpen
+} from 'lucide-react'
+import {
   cn
 } from '@/lib/utils'
 import React from 'react'
@@ -25,7 +29,9 @@ import {
   AnimatePresence,
   motion
 } from "framer-motion";
-import { LifeLccCourousel } from '@/components/LifeLccCourousel'
+import {
+  LifeLccCourousel
+} from '@/components/LifeLccCourousel'
 
 export default function Landing() {
   const [count,
@@ -82,13 +88,30 @@ export default function Landing() {
       </GlowBackgroundSection>
       <section id="lifeinlcc" className="py-16 w-full">
         <div className="mx-6 md:mx-10">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-[#007aff] to-transparent bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 inline-block">Life at LCC</h1>
-          
+          <div className="flex flex-row items-center space-x-2 bg-gradient-to-r from-[#007aff] to-transparent bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 w-fit">
+            <HeartHandshake />
+            <h1 className="text-2xl font-bold">Life at LCC</h1>
+          </div>
+
+
           <div className="mt-8">
             <LifeLccCourousel />
           </div>
         </div>
       </section>
+      <GlowBackgroundSection sectionId="hero" className="w-full">
+        <div className="mx-6 md:mx-10 py-16">
+          <div className="flex flex-row items-center space-x-2 bg-gradient-to-r from-[#007aff] to-transparent bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 w-fit">
+            <BookOpen className="text-[#007aff]" />
+            <h1 className="text-2xl font-bold">LCC Programs</h1>
+          </div>
+
+
+          <div className="mt-8 flex flex-col md:flex-row justify-center md:justify-start">
+            
+          </div>
+        </div>
+      </GlowBackgroundSection>
     </>
   )
 }
