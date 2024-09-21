@@ -1,3 +1,2 @@
-# React + TypeScript + Vite + Shadcn + TailwindCSS
-
-Simple boilerplate for me with React + Shadcn UI.
+# La Concepcion College school website.
+School showcase/promotion website, for La Concepcion College, made by Jan Liby Dela Costa.

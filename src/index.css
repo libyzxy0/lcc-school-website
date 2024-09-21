@@ -7,3 +7,12 @@
     --radius: 0.5rem
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #007aff;
+  color: white;
+}

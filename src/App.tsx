@@ -1,6 +1,6 @@
 import {
   Routes,
-  Route, 
+  Route,
   useLocation
 } from "react-router-dom";
 import {
@@ -8,15 +8,12 @@ import {
   lazy
 } from "react";
 import {
-  AnimatePresence,
-  motion
-} from "framer-motion";
-import {
   useState,
   useEffect
 } from 'react'
 
 const Home = lazy(() => import("@/pages/Home"));
+const About = lazy(() => import("@/pages/About"));
 
 export default function App() {
   const [isFirstMount,
@@ -33,13 +30,14 @@ export default function App() {
   return (
     <>
       <Suspense>
-        <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route index element={
               <Home />
               } />
+            <Route path="about" element={
+                <About />
+              } />
           </Routes>
-        </AnimatePresence>
       </Suspense>
     </>
   );

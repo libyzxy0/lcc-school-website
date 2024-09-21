@@ -15,8 +15,9 @@ import {
   AnimatePresence
 } from 'framer-motion';
 import logo from '@/assets/lcc.png'
+import { cn } from '@/lib/utils'
 
-export function Navbar() {
+export function Navbar({ className }: { className?: string }) {
   const [open,
     setOpen] = useState(false);
   const [isHeroVisible,
@@ -33,7 +34,7 @@ export function Navbar() {
       {
         root: null,
         rootMargin: '0px',
-        threshold: 0.8,
+        threshold: 1,
       }
     );
 
@@ -47,7 +48,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 h-16 flex justify-between items-center z-40 px-7 md:px-20 transition-colors duration-200 ${!open ? (isHeroVisible ? 'bg-transparent': 'bg-white backdrop-filter backdrop-blur-md bg-opacity-30'): 'bg-white border-b-[1.5px] border-gray-200'}`}>
+      <nav className={cn(`fixed top-0 left-0 right-0 h-16 flex justify-between items-center z-40 px-7 md:px-20 transition-colors duration-200 ${!open ? (isHeroVisible ? 'bg-transparent': 'bg-white backdrop-filter backdrop-blur-md bg-opacity-10'): 'bg-white border-b-[1.5px] border-gray-200'}`, className)}>
         <div className="flex items-center space-x-2 justify-center flex-row">
           <img src={logo} alt="La Concepcion College Logo" className="w-10 h-10" />
         <h1 className="font-playfair font-bold text-[#007aff] text-xl">La Concepcion College</h1>
@@ -95,18 +96,18 @@ export function Navbar() {
                       Home
                     </Link>
                   </li>
-                  <li>
+                  <li className="relative flex flex-row items-center justify-between">
                     <Link to="/about" className="text-gray-700 hover:text-blue-500 hover:underline">
                       About Us
                     </Link>
+                    <button>
+                      <ChevronDown className="text-gray-600" />
+                    </button>
                   </li>
                   <li className="relative flex flex-row items-center justify-between">
                     <Link to="/academics" className="text-gray-700 hover:text-blue-500 hover:underline">
                       Academics
                     </Link>
-                    <button>
-                      <ChevronDown className="text-gray-600" />
-                    </button>
                   </li>
                   <li className="relative flex flex-row items-center justify-between">
                     <Link to="/admissions" className="text-gray-700 hover:text-blue-500 hover:underline">

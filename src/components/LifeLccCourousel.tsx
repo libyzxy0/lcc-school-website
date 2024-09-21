@@ -1,4 +1,3 @@
-import * as React from "react"
 import {
   Card,
   CardContent
@@ -7,28 +6,22 @@ import Autoplay from "embla-carousel-autoplay"
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  CarouselItem
 } from "@/components/ui/carousel"
 
 const items = [{
-  title: "A Place to Meet Freinds",
   description: "As a student, there is more to life than what happens inside the classroom! Here at La Concepcion College (LCC), we make the most of the opportunities for our students to get involved in campus life, connect with others, and find support to help them succeed.",
   image: "https://laconcepcioncollege.com/wp-content/uploads/2011/04/156633_483063440749_340501180749_5558335_4597836_n1.jpg"
 },
   {
-    title: "Culture of Excellence",
-    description: "Here at LCC students are involved in leadership positions that serve as an active part of the LCC community and helps in various ways throughout the school year. They also exhibit competitiveness as they compete in academic, cultural, and athletic competitions within and outside the school. Most importantly, they hone their knowledge, skills, and attitude aimed at the culture of excellence.",
+    description: "Here at LCC students are involved in leadership positions that serve as an active part of the LCC community and helps in various ways throughout the school year. They also exhibit competitiveness as they compete in academic, cultural, and athletic competitions within and outside the school.",
     image: "https://laconcepcioncollege.com/wp-content/uploads/2010/12/535554_10151453153385750_1300836326_n.jpg"
   },
   {
-    title: "No Title",
     description: "There are active student organizations in LCC, under the supervision of the Office of the Student Affairs and the LCC Supreme Student Council, that equips the school year with meaningful activities.",
     image: "https://laconcepcioncollege.com/wp-content/uploads/2013/03/dsc_0378.jpg"
   },
   {
-    title: "No Title",
     description: "LCC also taught students to be PROUD and ADAPTABLE. Proud because of its numerous achievements. And adaptable despite the vast circumstances surrounding us in our community and country, they should stay focus and strong as they inculcate among themselves the core values that befits a true LCCian.",
     image: "https://laconcepcioncollege.com/wp-content/uploads/2011/09/319341_10150312911225750_340501180749_7737982_1894499494_n.jpg"
   }]
@@ -54,13 +47,12 @@ export function LifeLccCourousel() {
                 <CardContent className="flex flex-col items-center p-4">
                   <img
                   src={item.image}
-                  alt={item.title}
+                  alt={"Image " + index}
                   width={600}
                   height={400}
                   className="w-full h-48 object-cover rounded-md"
                   />
-                <h3 className="text-lg font-semibold mt-4 text-center">{item.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2 text-center">
+                <p className="text-sm text-muted-foreground mt-5 text-center">
                   {item.description}
                 </p>
               </CardContent>
