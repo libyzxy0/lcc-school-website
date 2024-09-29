@@ -7,13 +7,21 @@ import {
 } from "framer-motion";
 import {
   EmbeddedVideoAbout,
-  EmbeddedVideoLCCHymm
+  EmbeddedVideoLCCHymm, 
+  EmbeddedVideoLCCYell
 } from '@/components/EmbeddedVideo'
+import {
+  Eye, 
+  Music, 
+  University, 
+  Ribbon, 
+  Volume2
+} from 'lucide-react'
 
 export default function About() {
   return (
     <>
-      <Navbar className="bg-white" />
+      <Navbar className="bg-white border-b border-gray-200" />
       <AnimatePresence mode="wait">
         <motion.div
           initial={ { opacity: 0,
@@ -24,10 +32,11 @@ export default function About() {
             y: -20 }}
           transition={ { duration: 0.5 }}
           >
-          <section id="about" className="pt-16">
+          <section id="about" className="pt-20">
             <div className="mt-8 mx-6 md:mx-12">
               <div className="flex flex-row items-center space-x-2 bg-gradient-to-r from-[#007aff] to-transparent bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 w-fit">
-                <h1 className="text-2xl md:text-3xl font-bold">About La Concepcion College</h1>
+                <University className="text-[#007aff] pb-2" size={40} />
+                <h1 className="text-3xl md:text-3xl font-bold">About LCC</h1>
               </div>
             </div>
 
@@ -49,7 +58,8 @@ export default function About() {
           <section className="mx-6 md:mx-12 pt-16" id="vision-mission">
             <div className="mt-8">
               <div className="flex flex-row items-center space-x-2 bg-gradient-to-r from-[#007aff] to-transparent bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 w-fit">
-                <h1 className="text-2xl md:text-3xl font-bold">Vision & Mission Statement</h1>
+                <Eye className="text-[#007aff]" />
+                <h1 className="text-2xl md:text-3xl font-bold">Vision & Mission</h1>
               </div>
             </div>
 
@@ -74,6 +84,7 @@ export default function About() {
           <section className="mx-6 md:mx-12 pt-16" id="core-values">
             <div className="mt-8">
               <div className="flex flex-row items-center space-x-2 bg-gradient-to-r from-[#007aff] to-transparent bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 w-fit">
+                <Ribbon className="text-[#007aff]" />
                 <h1 className="text-2xl md:text-3xl font-bold">Core Values</h1>
               </div>
             </div>
@@ -90,14 +101,15 @@ export default function About() {
             </div>
           </section>
           
-      <section className="mx-6 py-12 md:py-16" id="lcc-hymm">
+      <section className="mx-6 pt-16" id="lcc-hymm">
   <div className="mt-8">
     <div className="flex flex-row items-center space-x-2 bg-gradient-to-r from-[#007aff] to-transparent bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 w-fit">
+      <Music className="text-[#007aff]" />
       <h1 className="text-xl md:text-3xl font-bold">LCC Hymm</h1>
     </div>
   </div>
 
-  <div className="mt-8 w-full flex flex-col md:flex-row md:space-x-8">
+  <div className="mt-8 w-full flex flex-col md:flex-row md:space-x-8 md:items-center">
     <div className="flex-1 flex-col space-y-4">
       <EmbeddedVideoLCCHymm className="rounded-lg" />
     </div>
@@ -105,7 +117,7 @@ export default function About() {
     <div className="flex-1 pt-5">
       <div className="grid grid-cols-2 gap-6">
         <div>
-          <h2 className="font-semibold text-lg md:text-xl">Verse 1:</h2>
+          <h2 className="font-semibold text-lg md:text-xl">Verse 1</h2>
           <p className="text-left text-sm md:text-base">
             We lead, we compete, we excel<br />
             We are proud LCCians, proud LCCians!<br />
@@ -117,7 +129,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="font-semibold text-lg md:text-xl">Chorus 1:</h2>
+          <h2 className="font-semibold text-lg md:text-xl">Chorus 1</h2>
           <p className="text-left text-sm md:text-base">
             We praise you and salute you<br />
             Forever we say, ‘Thank you.’<br />
@@ -128,7 +140,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="font-semibold text-lg md:text-xl">Chorus 2:</h2>
+          <h2 className="font-semibold text-lg md:text-xl">Chorus 2</h2>
           <p className="text-left text-sm md:text-base">
             Dear LCC, Alma Mater<br />
             You raise us to be better<br />
@@ -139,7 +151,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="font-semibold text-lg md:text-xl">Bridge:</h2>
+          <h2 className="font-semibold text-lg md:text-xl">Bridge</h2>
           <p className="text-left text-sm md:text-base">
             We uphold your core values<br />
             All we learned will be of use
@@ -147,7 +159,7 @@ export default function About() {
         </div>
 
         <div className="col-span-2">
-          <h2 className="font-semibold text-lg md:text-xl">Coda:</h2>
+          <h2 className="font-semibold text-lg md:text-xl">Coda</h2>
           <p className="text-left text-sm md:text-base">
             LCC brings out the best in you<br />
             Changing lives for the better you.<br />
@@ -159,8 +171,29 @@ export default function About() {
   </div>
 </section>
 
+      <section id="lcc-yell" className="py-16">
+            <div className="mt-8 mx-6 md:mx-12">
+              <div className="flex flex-row items-center space-x-2 bg-gradient-to-r from-[#007aff] to-transparent bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 w-fit">
+                <Volume2 className="text-[#007aff]" />
+                <h1 className="text-2xl md:text-3xl font-bold">LCC Yell</h1>
+              </div>
+            </div>
 
+            <div className="px-5 md:px-12 flex flex-row mt-5">
+              <div className="w-full flex flex-col md:flex-row md:space-x-12 items-center">
 
+                <div className="mt-8 md:mt-0 flex-1 space-y-6">
+                  <p className="md:text-lg">
+                    A true LCCian is characterized by the three core values of LCC: Leadership, Competitiveness, and Culture of Excellence. As a proof of being a true LCCian that befits these three core values, a unique LCC yell serves as the battle cry to uplift the spirit of a PROUD LCCian.
+                  </p>
+
+                </div>
+                <div className="flex-1 mt-10 md:mt-0 w-full">
+                  <EmbeddedVideoLCCYell className="rounded-lg" />
+                </div>
+              </div>
+            </div>
+          </section>
           
         </motion.div>
       </AnimatePresence>

@@ -12,15 +12,23 @@ type PropsWithChildren = {
 export const GlowBackgroundSection = ({
   children, className, sectionId
 }: PropsWithChildren) => (
-  <section className="relative" id={sectionId}>
+  <div className="relative">
     <div
       className={cn(`absolute inset-0 z-0`, className)}
-      style={ {
-        background: `linear-gradient(120deg, #dbf5ff 40%, #f1fbff 70%, #ffffff 100%)`,
+      style={{
+        backgroundImage: `url('/lcc-bg.webp')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
-      />
-    <div className="relative z-10 h-full">
+    />
+    <div
+      className="absolute inset-0 z-10 bg-[#007aff] bg-opacity-30"
+    />
+    <div
+      className="absolute inset-0 z-10 bg-[#000000] bg-opacity-50"
+    />
+    <section className="relative h-full z-20" id={sectionId}>
       {children}
-    </div>
-  </section>
+    </section>
+  </div>
 );

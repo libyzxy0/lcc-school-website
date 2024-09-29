@@ -29,7 +29,7 @@ const items = [{
 export function LifeLccCourousel() {
   return (
     <Carousel
-      plugins={[
+    plugins={[
         Autoplay( {
           delay: 3000,
         }),
@@ -47,7 +47,7 @@ export function LifeLccCourousel() {
                 <CardContent className="flex flex-col items-center p-4">
                   <img
                   src={item.image}
-                  alt={"Image " + index}
+                  alt={"Image " + (index + 1)}
                   width={600}
                   height={400}
                   className="w-full h-48 object-cover rounded-md"

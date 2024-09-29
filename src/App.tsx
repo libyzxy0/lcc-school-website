@@ -1,44 +1,50 @@
 import {
   Routes,
-  Route,
-  useLocation
+  Route
 } from "react-router-dom";
 import {
-  Suspense,
-  lazy
-} from "react";
-import {
-  useState,
-  useEffect
-} from 'react'
+  Footer
+} from '@/components/Footer'
 
-const Home = lazy(() => import("@/pages/Home"));
-const About = lazy(() => import("@/pages/About"));
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import AdmissionsBasic from "@/pages/Admissions/BasicEdReq";
+import AdmissionsCollege from "@/pages/Admissions/CollegeEdReq";
+import Programs from "@/pages/Programs";
+import Enrollment from "@/pages/Admissions/Enrollment";
+import Tuitions from "@/pages/Admissions/TuitionFee";
+import Contact from "@/pages/Contact";
 
 export default function App() {
-  const [isFirstMount,
-    setIsFirstMount] = useState(true);
-  const location = useLocation();
-
-  useEffect(() => {
-    if (isFirstMount) {
-      setIsFirstMount(false);
-    }
-  },
-    [isFirstMount]);
-
   return (
     <>
-      <Suspense>
-          <Routes location={location} key={location.pathname}>
-            <Route index element={
-              <Home />
-              } />
-            <Route path="about" element={
-                <About />
-              } />
-          </Routes>
-      </Suspense>
+      <Routes>
+        <Route index element={
+          <Home />
+          } />
+        <Route path="about" element={
+          <About />
+          } />
+        <Route path="/admissions/basic/requirements" element={
+          <AdmissionsBasic />
+          } />
+        <Route path="/admissions/college/requirements" element={
+          <AdmissionsCollege />
+          } />
+        <Route path="/programs" element={
+          <Programs />
+          } />
+        <Route path="/admissions/online-enrollment" element={
+          <Enrollment />
+          } />
+        <Route path="/admissions/tuition-fee" element={
+          <Tuitions />
+          } />
+        <Route path="/contact" element={
+          <Contact />
+          } />
+      </Routes>
+      <Footer />
     </>
   );
 }
